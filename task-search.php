@@ -1,9 +1,9 @@
 <?php
-
+    //inicializamos la conexion
     include('database.php');
 
     $search = $_POST['search'];
-
+    //declaramos una validacion
     if(!empty($search)){
         $query = "SELECT * FROM tareas WHERE nombre LIKE '$search%'";
         $result = mysqli_query($connection,$query);
