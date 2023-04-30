@@ -38,10 +38,18 @@ $(document).ready(function () {
     };
     $.post('task-add.php',postData,function(response){
         console.log(response);
+        //para resetear el formulario
         $('#task-form').trigger('reset');
     });
-
     e.preventDefault();
   });
+
+  $.ajax({
+    url: 'task-list.php',
+    type:'GET',
+    success:function(response){
+      console.log(response)
+    }
+  })
 
 });
